@@ -13,6 +13,9 @@ export class Content implements OnInit {
   photoCover:string = ""
   contentTitle:string = ""
   contentDescription:string = ""
+  contentAuthor:string = ""
+  publishedAt:string = ""
+  readTime:string = ""
   private id:string | null = "0"
 
   constructor(
@@ -35,6 +38,18 @@ export class Content implements OnInit {
     this.contentTitle = result.title
     this.contentDescription = result.description
     this.photoCover = result.photoCover
+    this.contentAuthor = result.author
+    this.publishedAt = result.publishedAt
+    this.readTime = result.readTime
+  }
+
+  get formattedDate(): string {
+    if (!this.publishedAt) return '';
+    return new Intl.DateTimeFormat('pt-BR', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    }).format(new Date(this.publishedAt));
   }
 
 }

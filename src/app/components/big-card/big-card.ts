@@ -18,10 +18,25 @@ export class BigCard implements OnInit {
   cardDescription:string =""
   @Input()
   Id:string="0"
+  @Input()
+  author:string = ""
+  @Input()
+  publishedAt:string = ""
+  @Input()
+  readTime:string = ""
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get formattedDate(): string {
+    if (!this.publishedAt) return '';
+    return new Intl.DateTimeFormat('pt-BR', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    }).format(new Date(this.publishedAt));
   }
 
 }

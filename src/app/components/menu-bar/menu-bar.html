@@ -1,9 +1,56 @@
-<div class="container">
-  <ul>
-    <li><a href="https://www.linkedin.com/in/flora-martins-299631a3/">Linkedin</a></li>
-    <li><span>•</span></li>
-    <li><a href="https://github.com/codefloracode">Github</a></li>
-    <li><span>•</span></li>
-    <li><a href="https://www.instagram.com/hiimf/">Instagram</a></li>
-  </ul>
+<div class="menu-shell">
+  <nav class="navbar">
+    <a class="brand" [routerLink]="['/']" (click)="goHomeTop($event)">MARVEL BLOG</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      aria-label="Abrir menu de navegação"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-wrapper" [class.open]="isMobileMenuOpen">
+      <ul class="menu-links">
+        <li>
+          <a [routerLink]="['/']" [class.active]="activeSection === 'home'" (click)="setActiveSection('home')">Início</a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/']"
+            fragment="latest"
+            [class.active]="activeSection === 'latest'"
+            (click)="setActiveSection('latest')"
+          >
+            Últimas
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/']"
+            fragment="series"
+            [class.active]="activeSection === 'series'"
+            (click)="setActiveSection('series')"
+          >
+            Séries
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/']"
+            fragment="movies"
+            [class.active]="activeSection === 'movies'"
+            (click)="setActiveSection('movies')"
+          >
+            Filmes
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
 </div>

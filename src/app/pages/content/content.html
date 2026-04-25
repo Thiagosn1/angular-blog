@@ -1,13 +1,20 @@
 <div class="content">
   <div class="cover">
-    <img src="{{ photoCover }}" alt="" srcset="">
+    <img src="{{ photoCover }}" alt="{{ contentTitle }}" srcset="">
   </div>
   <div class="title">
     <h1>{{ contentTitle }}</h1>
-    <hr />
+    <div class="meta">
+      <span class="meta__author">{{ contentAuthor }}</span>
+      <span class="meta__dot">•</span>
+      <span class="meta__date">{{ formattedDate }}</span>
+      <span class="meta__dot">•</span>
+      <span class="meta__time">{{ readTime }} de leitura</span>
+    </div>
   </div>
+  <hr />
   <div class="description">
-    <a [routerLink]="['']"> << VOLTAR </a>
+    <a class="back-link" [routerLink]="['']"><< VOLTAR</a>
     <p>
       {{ contentDescription }}
     </p>

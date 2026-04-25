@@ -3,14 +3,21 @@
   <div class="photo">
     <img
       src="{{ photoCover }}"
-      alt=""
-      height="200px"
+      alt="{{ cardTitle }}"
       srcset=""
     >
   </div>
 
   <div class="title">
     <h1><a [routerLink]="['content', Id]">{{ cardTitle }}</a></h1>
+  </div>
+
+  <div class="meta">
+    <span class="meta__author">{{ author }}</span>
+    <span class="meta__dot">•</span>
+    <span class="meta__date">{{ formattedDate }}</span>
+    <span class="meta__dot">•</span>
+    <span class="meta__time">{{ readTime }} de leitura</span>
   </div>
 
   <div class="description">
