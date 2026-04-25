@@ -1,0 +1,15 @@
+.container{
+  color: white;
+  text-align: center;
+}
+
+.container > h1{
+  margin: 1rem 0;
+  font-size: clamp(2rem, 8vw, 6rem);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container > hr{
+  margin: 1rem auto;
+  width: 80%;
+}

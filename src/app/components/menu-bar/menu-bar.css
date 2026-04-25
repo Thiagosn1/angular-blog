@@ -1,0 +1,12 @@
+.container > ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0;
+}
+
+.container > ul > li{
+  list-style: none;
+}
